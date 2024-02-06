@@ -31,7 +31,8 @@ function writeGitstamp(i) {
         const absPath = fileURLToPath(import.meta.url);
         // 回退两个层级定位到主目录
         const basic = path.dirname(path.dirname(absPath));
-        fs.writeFileSync(path.join(basic, './index.js'), `export default ${JSON.stringify(i, null, 4)};`);
+        const content = `// 该文件在调用cli时会被覆写指定信息\nexport default ${JSON.stringify(i, null, 4)};`
+        fs.writeFileSync(path.join(basic, './index.js'), content);
     }catch(err) {
         console.log(chalk.bgRed('Gitstamp：文件写入出错，请检查。'));
         console.log(chalk.bgRed(err));

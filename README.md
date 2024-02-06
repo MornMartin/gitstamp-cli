@@ -8,8 +8,7 @@
 
 ## 使用
 1. 安装 `npm install gitstamp-cli -s`
-2. 写入当前Git信息`npx gitstamp`
-    建议script一起使用，如打包前写入最新的Git信息如
+2. 写入当前Git信息`npx gitstamp`，建议在script中使用。打包命令前执行Git信息写入命令，如
     package.json
     ```json
     ...
@@ -20,7 +19,7 @@
         },
     ...
     ```
-3. 载入Git信息
+4. 载入Git信息
 
     main.js
     ```js

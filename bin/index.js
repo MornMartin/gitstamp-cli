@@ -9,13 +9,15 @@ import { fileURLToPath } from 'url';
  */
 function getGitstamp() {
     try{
+        // Jenkins编包时，无法获取到分支信息
+        const branchInEnv = process.env.CURRENT_GIT_BRANCH;
         const branch  = childProcess.execSync('git branch --show-current').toString().trim();
         const commitID = childProcess.execSync('git show -s --format=%"H"').toString().trim();
         const commitAuthor = childProcess.execSync('git show -s --format=%"cN"').toString().trim();
         const commitMessage = childProcess.execSync('git show -s --format=%"s"').toString().trim();
         const commitTime = childProcess.execSync('git show -s --format=%"cd"').toString().trim();
         const commitDate = `${new Date(commitTime).toLocaleDateString()} ${new Date(commitTime).toLocaleTimeString()}`;
-        return { branch, commitID, commitDate, commitAuthor, commitMessage };
+        return { branch: branch || branchInEnv, commitID, commitDate, commitAuthor, commitMessage };
     }catch(err) {
         console.log(chalk.bgRed('Gitstamp：Git调用出错，请检查。'));
         console.log(chalk.bgRed(err));

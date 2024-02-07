@@ -1,14 +1,18 @@
 {
   "name": "gitstamp-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "用于工程编包写入Git信息",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MornMartin/gitstamp-cli.git"
+  },
+  "author": "MornMartin",
+  "license": "MIT",
   "type": "module",
   "bin": {
     "gitstamp": "./bin/index.js"

@@ -1,8 +1,8 @@
 {
   "name": "gitstamp-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "用于工程编包写入Git信息",
-  "module": "./index.js",
+  "module": "./index.mjs",
   "typings": "./index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

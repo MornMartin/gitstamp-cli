@@ -1,7 +1,8 @@
 {
   "name": "gitstamp-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "用于工程编包写入Git信息",
+  "main": "./index.cjs",
   "module": "./index.mjs",
   "typings": "./index.d.ts",
   "scripts": {
